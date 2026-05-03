@@ -6,7 +6,7 @@ QurbaniHat is a modern livestock marketplace where users can explore animals (co
 
 ## 🌐 Live URL
 
-[View Live Demo](https://qurbani-hat.vercel.app)
+[View Live Demo](https://altaf-qurbani-hat.netlify.app/)
 
 ## ✨ Key Features
 
