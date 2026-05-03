@@ -1,4 +1,4 @@
-# 🐄 QurbaniHat - Livestock Booking Platform
+# 🐄 QurbaniHat - Booking Platform
 
 ## 📌 Project Overview
 
@@ -22,7 +22,7 @@ QurbaniHat is a modern livestock marketplace where users can explore animals (co
 
 1. **My Profile Page** - View user profile with name, email, and photo
 2. **Update Profile** - Update user name and profile image URL
-3. **Animations** - Smooth animations using Framer Motion
+3. **Animations** - Smooth animations using Animation css
 
 ### Additional Features
 
@@ -40,7 +40,8 @@ QurbaniHat is a modern livestock marketplace where users can explore animals (co
 - **React Router DOM v6** - Routing
 - **Tailwind CSS** - Styling
 - **daisyUI** - UI Components
-- **Framer Motion** - Animations (Challenge #3)
+- **Animation.css** - Animations (Challenge #3)
+- **emoji** - https://emojipedia.org/crescent-moon (used korsai)
 
 ### Authentication & State
 

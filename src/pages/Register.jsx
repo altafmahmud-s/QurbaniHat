@@ -32,12 +32,12 @@ const Register = () => {
       <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/10 backdrop-blur-md border border-white/20">
         
         <h2 className="text-3xl font-bold text-center text-white mb-6">
-          Create Account 🐄
+          Create Account 
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* Name */}
+          {/* Name part  */}
           <div>
             <label className="text-sm text-gray-200">Name</label>
             <input
@@ -49,7 +49,7 @@ const Register = () => {
             />
           </div>
 
-          {/* Email */}
+          {/* Email part */}
           <div>
             <label className="text-sm text-gray-200">Email</label>
             <input
@@ -61,7 +61,8 @@ const Register = () => {
             />
           </div>
 
-          {/* Photo */}
+          {/* Photo  part*/}
+
           <div>
             <label className="text-sm text-gray-200">Photo URL (optional)</label>
             <input
@@ -73,7 +74,7 @@ const Register = () => {
             />
           </div>
 
-          {/* Password */}
+          {/* Password  part*/}
           <div>
             <label className="text-sm text-gray-200">Password</label>
             <input
@@ -85,16 +86,16 @@ const Register = () => {
             />
           </div>
 
-          {/* Button */}
+          {/* Button part */}
           <button className="btn w-full bg-[#22c55e] hover:bg-[#16a34a] text-white border-none mt-2">
             Register
           </button>
         </form>
 
-        {/* Divider */}
+        {/* Divider  part */}
         <div className="divider text-gray-300">OR</div>
 
-        {/* Google */}
+        {/* Google part */}
         <button
           onClick={handleGoogleLogin}
           className="btn w-full bg-white text-black hover:bg-gray-200"
@@ -103,7 +104,7 @@ const Register = () => {
           Continue with Google
         </button>
 
-        {/* Login link */}
+        {/* Login link part */}
         <p className="text-center text-gray-300 mt-5">
           Already have an account?{' '}
           <Link to="/login" className="text-green-400 hover:underline">

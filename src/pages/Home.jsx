@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
 import animalData from '../data/animals.json';
 import { FaHeart, FaShieldAlt, FaTruck } from 'react-icons/fa';
+import { TbCurrencyTaka } from "react-icons/tb";
+
 
 const Home = () => {
   const featuredAnimals = animalData.slice(0, 4);
 
   return (
+
     <div className="container mx-auto px-4">
       
-      {/* Hero Section with Image Left-Right Layout */}
+      {/* Hero Section part  with Image Left-Right Layout */}
       <div className="animate__animated animate__fadeInDown hero min-h-[550px] rounded-2xl my-8 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="hero-content flex-col lg:flex-row-reverse gap-8">
           
@@ -21,7 +24,7 @@ const Home = () => {
             />
           </div>
           
-          {/* Left Side - Text Content */}
+          {/* Left Side - Text Content part */}
           <div className="flex-1 text-center lg:text-left text-white">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Find Your Perfect <br />
@@ -39,8 +42,14 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Featured Animals with animation */}
+
+
+      {/* Featured Animals with animation  part*/}
+
       <h2 className="text-3xl font-bold text-center my-8 animate__animated animate__fadeIn">Featured Animals</h2>
+
+        {/* { 4 card part home showing} */}
+        
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {featuredAnimals.map((animal, index) => (
           <div 
@@ -48,12 +57,16 @@ const Home = () => {
             className={`animate__animated animate__fadeInUp card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
+
             <figure className="h-64 overflow-hidden">
               <img src={animal.image} alt={animal.name} className="w-full h-full object-cover" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{animal.name}</h2>
-              <p className="text-2xl font-bold text-primary">৳{animal.price.toLocaleString()}</p>
+              <div className="flex items-center text-2xl font-bold text-primary">
+  <TbCurrencyTaka className="mr-1" />
+  <span>{animal.price.toLocaleString()}</span>
+</div>
               <p className="text-gray-600">{animal.breed}</p>
               <div className="card-actions justify-end">
                 <Link to={`/details/${animal.id}`} className="btn btn-primary">
@@ -65,7 +78,10 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Qurbani Tips */}
+
+
+      {/* Qurbani Tips part and emoji used */}
+
       <div className="animate__animated animate__fadeInLeft card bg-success text-success-content my-12">
         <div className="card-body">
           <h2 className="card-title text-2xl justify-center">🌙 Qurbani Tips</h2>
@@ -89,7 +105,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Top Breeds */}
+      {/* Top Breeds  part and emoji used*/}
+
       <div className="animate__animated animate__fadeInRight card bg-primary text-primary-content my-12">
         <div className="card-body">
           <h2 className="card-title text-2xl justify-center">🏆 Top Breeds for Qurbani</h2>

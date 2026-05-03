@@ -30,12 +30,12 @@ const Login = () => {
       <div className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/10 backdrop-blur-md border border-white/20">
 
         <h2 className="text-3xl font-bold text-center text-white mb-6">
-          Welcome Back 👋
+          Welcome Back 
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* Email */}
+          {/* Email  part*/}
           <div>
             <label className="text-sm text-gray-200">Email</label>
             <input
@@ -47,7 +47,7 @@ const Login = () => {
             />
           </div>
 
-          {/* Password */}
+          {/* Password  part*/}
           <div>
             <label className="text-sm text-gray-200">Password</label>
             <input
@@ -59,16 +59,19 @@ const Login = () => {
             />
           </div>
 
-          {/* Login Button */}
+          {/* Login Button  part*/}
+
           <button className="btn w-full bg-[#22c55e] hover:bg-[#16a34a] text-white border-none mt-2">
             Login
           </button>
         </form>
 
-        {/* Divider */}
+        {/* Divider  part*/}
+
         <div className="divider text-gray-300">OR</div>
 
-        {/* Google Login */}
+        {/* Google Login part */}
+
         <button
           onClick={handleGoogleLogin}
           className="btn w-full bg-white text-black hover:bg-gray-200"
@@ -77,7 +80,8 @@ const Login = () => {
           Continue with Google
         </button>
 
-        {/* Register Link */}
+        {/* Register Link  part*/}
+
         <p className="text-center text-gray-300 mt-5">
           Don't have an account?{' '}
           <Link to="/register" className="text-green-400 hover:underline">

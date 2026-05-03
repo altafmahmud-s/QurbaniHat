@@ -1,10 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import animalData from '../data/animals.json';
+import { FaLocationDot } from "react-icons/fa6";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 const AllAnimals = () => {
   const [sortBy, setSortBy] = useState('default');
-  const [animals, setAnimals] = useState(animalData);
+  const [animals, setAnimals] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // async/await part using 
+  const fetchAnimals = async () => {
+    try {
+      const response = await fetch('/animals.json');
+      const data = await response.json();
+      setAnimals(data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    }
+  };
+
+
+  useEffect(() => {
+    fetchAnimals();
+  }, []);
+
 
   const handleSort = (e) => {
     const value = e.target.value;
@@ -16,10 +37,21 @@ const AllAnimals = () => {
     } else if (value === 'high-to-low') {
       sorted.sort((a, b) => b.price - a.price);
     } else {
-      sorted = animalData;
+      sorted = [...animals];
     }
     setAnimals(sorted);
   };
+
+  // Loading state part 
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 text-center">
+        <span className="loading loading-spinner loading-lg"></span>
+        <p className="mt-4">Loading animals...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -37,6 +69,8 @@ const AllAnimals = () => {
         </div>
       </div>
 
+
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {animals.map(animal => (
           <div key={animal.id} className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
@@ -47,11 +81,19 @@ const AllAnimals = () => {
               <h2 className="card-title">{animal.name}</h2>
               <div className="badge badge-secondary">{animal.type}</div>
               <p className="text-sm text-gray-600">Breed: {animal.breed}</p>
-              <p className="text-2xl font-bold text-primary mt-2">৳{animal.price.toLocaleString()}</p>
-              <p className="text-sm">📍 {animal.location}</p>
+              <p className="text-2xl font-bold text-primary mt-2">
+                <TbCurrencyTaka className="inline-block mr-1" />
+                {animal.price.toLocaleString()}
+              </p>
+
+                <p className="font-bold flex items-center gap-1">
+                <FaLocationDot />
+                {animal.location}
+              </p>
+              
               <div className="card-actions justify-end mt-4">
                 <Link to={`/details/${animal.id}`} className="btn btn-primary">
-                 <p className="text-gray-200">View Details</p>
+                  <p className="text-gray-200">View Details</p>
                 </Link>
               </div>
             </div>
